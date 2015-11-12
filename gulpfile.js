@@ -6,7 +6,7 @@ var sass = require("gulp-sass");
 
 gulp.task("scripts", function() {
     browserify("./assets/js/app.js", { debug: true })
-        .transform(babelify)
+        .transform(babelify, { presets: ['es2015'] })
         .bundle()
         .pipe(source('app.js'))
         .on("error", function (err) { console.log("Error : " + err.message); })
