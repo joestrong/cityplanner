@@ -1,0 +1,24 @@
+{
+  "name": "cityplanner",
+  "version": "0.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joestrong/cityplanner.git"
+  },
+  "author": "Joe Strong <joestrong@gmail.com> (https://www.joestrong.co.uk/)",
+  "bugs": {
+    "url": "https://github.com/joestrong/cityplanner/issues"
+  },
+  "devDependencies": {
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
