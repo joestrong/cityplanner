@@ -6,7 +6,7 @@ export default class GameController
     constructor()
     {
         this.city = new City(document.querySelector('body'));
-        this.time = 3;
+        this.time = 1;
 
         this.timerView = document.querySelector('#timer-view');
 
@@ -14,7 +14,7 @@ export default class GameController
         window.setInterval(() => {
             this.time--;
             if (this.time === -1) {
-                this.time = 3;
+                this.time = 1;
                 this.city.createRandomBlock();
             }
             this.updateHud();
