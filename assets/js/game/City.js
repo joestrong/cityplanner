@@ -1,3 +1,5 @@
+import { randomBetween } from "../helpers/math.js";
+
 export default class City
 {
 
@@ -20,7 +22,7 @@ export default class City
 
     createRandomBlock()
     {
-        var random = this.randomBetween(0, 2);
+        var random = randomBetween(0, 2);
         var blockType = '';
         switch (random) {
             case 0:
@@ -52,11 +54,7 @@ export default class City
     }
 
     getEmptySpace() {
-        return this.emptyBlocks[this.randomBetween(0, (this.emptyBlocks.length - 1))];
-    }
-
-    randomBetween(a, b) {
-        return Math.round(Math.random() * (b - a)) + a;
+        return this.emptyBlocks[randomBetween(0, (this.emptyBlocks.length - 1))];
     }
 
     scopeOutSurroundingBlocks(block)
