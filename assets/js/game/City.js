@@ -15,8 +15,8 @@ export default class City
     init()
     {
         this.emptyBlocks.push({
-            x: 200,
-            y: 200
+            x: Math.floor(this.container.clientWidth/2),
+            y: Math.floor(this.container.clientHeight/2)
         });
     }
 
