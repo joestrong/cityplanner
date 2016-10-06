@@ -4,6 +4,8 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch",
     "serve": "ws -d ./public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
