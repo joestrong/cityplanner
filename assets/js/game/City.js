@@ -60,10 +60,10 @@ export default class City
     scopeOutSurroundingBlocks(block)
     {
         var newBlocks = [
-            { x: block.x - 50, y: block.y },
-            { x: block.x + 50, y: block.y },
-            { x: block.x, y: block.y - 50 },
-            { x: block.x, y: block.y + 50 }
+            { x: block.x - this.blockSize, y: block.y },
+            { x: block.x + this.blockSize, y: block.y },
+            { x: block.x, y: block.y - this.blockSize },
+            { x: block.x, y: block.y + this.blockSize }
         ];
         newBlocks = newBlocks.filter((block) => {
             var inBlocks = this.occupiedBlocks.filter((occupiedBlock) => {
