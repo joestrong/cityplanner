@@ -5,7 +5,7 @@ export default class GameController
 
     constructor()
     {
-        this.city = new City(document.querySelector('body'));
+        this.city = new City(document.querySelector('#container'));
         this.time = 1;
 
         this.timerView = document.querySelector('#timer-view');
