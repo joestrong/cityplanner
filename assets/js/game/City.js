@@ -9,6 +9,11 @@ export default class City
         this.blockSize = 50;
         this.occupiedBlocks = [];
         this.emptyBlocks = [];
+        this.blockTypes = [
+			'house',
+			'road',
+			'wood'
+		];
         this.init();
     }
 
@@ -22,19 +27,9 @@ export default class City
 
     createRandomBlock()
     {
-        var random = randomBetween(0, 2);
-        var blockType = '';
-        switch (random) {
-            case 0:
-                blockType = 'house';
-                break;
-            case 1:
-                blockType = 'road';
-                break;
-            case 2:
-                blockType = 'wood';
-                break;
-        }
+        var random = randomBetween(0, this.blockTypes.length);
+        var blockType = this.blockTypes[random];
+
         var block = document.createElement('div');
         block.textContent = blockType;
         block.className = 'block ' + blockType;
