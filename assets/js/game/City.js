@@ -9,32 +9,27 @@ export default class City
         this.blockSize = 50;
         this.occupiedBlocks = [];
         this.emptyBlocks = [];
+        this.blockTypes = [
+			'house',
+			'road',
+			'wood'
+		];
         this.init();
     }
 
     init()
     {
         this.emptyBlocks.push({
-            x: 200,
-            y: 200
+            x: Math.floor(this.container.clientWidth/2),
+            y: Math.floor(this.container.clientHeight/2)
         });
     }
 
     createRandomBlock()
     {
-        var random = randomBetween(0, 2);
-        var blockType = '';
-        switch (random) {
-            case 0:
-                blockType = 'house';
-                break;
-            case 1:
-                blockType = 'road';
-                break;
-            case 2:
-                blockType = 'wood';
-                break;
-        }
+        var random = randomBetween(0, this.blockTypes.length);
+        var blockType = this.blockTypes[random];
+
         var block = document.createElement('div');
         block.textContent = blockType;
         block.className = 'block ' + blockType;
@@ -60,10 +55,10 @@ export default class City
     scopeOutSurroundingBlocks(block)
     {
         var newBlocks = [
-            { x: block.x - 50, y: block.y },
-            { x: block.x + 50, y: block.y },
-            { x: block.x, y: block.y - 50 },
-            { x: block.x, y: block.y + 50 }
+            { x: block.x - this.blockSize, y: block.y },
+            { x: block.x + this.blockSize, y: block.y },
+            { x: block.x, y: block.y - this.blockSize },
+            { x: block.x, y: block.y + this.blockSize }
         ];
         newBlocks = newBlocks.filter((block) => {
             var inBlocks = this.occupiedBlocks.filter((occupiedBlock) => {
